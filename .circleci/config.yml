@@ -1,5 +1,4 @@
-      - store_artifacts:
-n CircleCI 2.0 configuration file
+# Python CircleCI 2.0 configuration file
 #
 # Check https://circleci.com/docs/2.0/language-python/ for more details
 #
@@ -33,7 +32,7 @@ jobs:
           command: |
             python3 -m venv venv
             . venv/bin/activate
-            pip install -r requirements.txt
+            make install
 
       - save_cache:
           paths:
@@ -50,4 +49,3 @@ jobs:
           command: |
             . venv/bin/activate
             make lint
-
